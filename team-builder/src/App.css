@@ -6,13 +6,20 @@
 
 .Form{
   border: 2px solid black;
-  height: 50px;
+  height: 75px;
+  background: gray;
   
 }
 
 .Team-list{
+background: lightblue;
+padding: 10px;
+}
+
+.member{
   border: 2px solid black; 
   width: 250px;
+  margin: 20px;
 }
 
 
