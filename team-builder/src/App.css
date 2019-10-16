@@ -2,7 +2,24 @@
   text-align: center;
 }
 
-.App-logo {
+
+
+.Form{
+  border: 2px solid black;
+  height: 50px;
+  
+}
+
+.Team-list{
+  border: 2px solid black; 
+  width: 250px;
+}
+
+
+
+
+
+/* .App-logo {
   height: 40vmin;
 }
 
@@ -19,4 +36,4 @@
 
 .App-link {
   color: #09d3ac;
-}
+}  */

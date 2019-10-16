@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 
 import Form from './components/Form';
 import Data from './components/Data';
+import TeamMember from './components/TeamMember';
+
+
+
 
 function App() {
+
+  const [member, setMember] = useState(Data);
+  console.log(member);
+  const addNewMember = member2 => {
+setMember([...member, member2]);
+  }
+
   return (
     <div className="App">
       <h1>Team Builder</h1>
-        <Form/>
+        <Form addmember={addNewMember}/>
+        <TeamMember memberList={member}/>
+        
 
 
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Form = props => {
-    const [form, setForm] = useState({})
+    const [form, setForm] = useState({name:'',email:'', role:''})
     const changeHandler = e => {
         console.log(e.target.value);
         setForm({...form, [e.target.name]: e.target.value});
@@ -10,13 +10,18 @@ const Form = props => {
     const submitForm = e => {
         e.preventDefault();
         const addNewNote = {
-
-        }
+            ...form
+        };
+        props.addmember(addNewNote);
+        setForm({name:'', email:'', role:''})
     }
 
 
 return(
+    <div className="Form">
+
     <form onSubmit={submitForm}>
+
         <label htmlFor='name'>Name</label>
         <input
         type='text'
@@ -26,29 +31,31 @@ return(
         onChange={changeHandler}
         />
 
-    <label htmlFor='email'>Name</label>
+    <label htmlFor='email'>Email</label>
         <input
         type='text'
         name='email'
         placeholder='Enter Email'
-        value= {form.name}
+        value= {form.email}
         onChange= {changeHandler}
         />
         
-    <label htmlFor='Role'>Name</label>
+    <label htmlFor='Role'>Role</label>
         <input
         type='text'
         name='role'
         placeholder='Enter Role'
-        value = {form.name}
+        value = {form.role}
         onChange={changeHandler}
         />
 
 
-
+    <button type="submit">Add note</button>
 
 
     </form>
+
+    </div>
 )
 
 
